@@ -41,7 +41,4 @@ public class BFSSolver {
         return path;
     }
 
-
-
-    // You can add methods to access and interact with the graph here.
 }
