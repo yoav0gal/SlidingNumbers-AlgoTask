@@ -3,18 +3,8 @@ import java.util.List;
 
 public class Main {
 
-    public static void printPath(List<Board> path){
-        System.out.println("Initial Board:");
-        path.forEach(board -> {
-            board.displayBoard();
-            System.out.println("\n---------------------------------");
-        });
-    }
-
-
     public static void main(String[] args) {
 
-//
 //        TestCases.BasicTest(4,10);
 //        TestCases.BasicTest(4,10);
 //        TestCases.BasicTest(4,10);
