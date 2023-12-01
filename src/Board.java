@@ -6,19 +6,23 @@ public class Board {
     private int[][] gameState;
     private Point emptySlot;
     private int size;
+    public static int ID_COUNTER = 1;
+    private int id;
 
     // Constructor with given gameState
     public Board(int[][] gameState) {
+        this.id = ID_COUNTER++;
         this.size = gameState.length;
         this.gameState = new int[size][size];
         for (int boardCol = 0; boardCol < size; boardCol++) {
             System.arraycopy(gameState[boardCol], 0, this.gameState[boardCol], 0, gameState[boardCol].length);
         }
-        findEmptySlot();
+        this.emptySlot = findEmptySlot();
     }
 
     // Constructor with size and number of moves
     public Board(int size, int moves) {
+        this.id = ID_COUNTER++;
         this.size = size;
         this.gameState = new int[size][size];
         initializeBoard();
@@ -36,15 +40,16 @@ public class Board {
         emptySlot = new Point(size - 1, size - 1);
     }
 
-    private void findEmptySlot() {
+    private Point findEmptySlot() {
         for (int boardCol = 0; boardCol < size; boardCol++) {
             for (int boardRow = 0; boardRow < size; boardRow++) {
                 if (gameState[boardCol][boardRow] == 0) {
-                    emptySlot = new Point(boardCol, boardRow);
-                    return;
+                    return new Point(boardCol, boardRow);
                 }
             }
         }
+        //Problems
+        return new Point (-1,-1);
     }
 
     private void shuffleBoard(int moves) {
@@ -116,5 +121,9 @@ public class Board {
             }
             System.out.println();
         }
+    }
+
+    public int getId() {
+        return id;
     }
 }
