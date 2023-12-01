@@ -1,17 +1,17 @@
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.*;
 
 public class Board {
     private int[][] gameState;
     private Point emptySlot;
     private int size;
-    public static int ID_COUNTER = 1;
-    private int id;
+
 
     // Constructor with given gameState
     public Board(int[][] gameState) {
-        this.id = ID_COUNTER++;
+
         this.size = gameState.length;
         this.gameState = new int[size][size];
         for (int boardCol = 0; boardCol < size; boardCol++) {
@@ -22,7 +22,6 @@ public class Board {
 
     // Constructor with size and number of moves
     public Board(int size, int moves) {
-        this.id = ID_COUNTER++;
         this.size = size;
         this.gameState = new int[size][size];
         initializeBoard();
@@ -49,7 +48,7 @@ public class Board {
             }
         }
         //Problems
-        return new Point (-1,-1);
+        return new Point(-1, -1);
     }
 
     private void shuffleBoard(int moves) {
@@ -123,7 +122,25 @@ public class Board {
         }
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Board other = (Board) obj;
+
+        if (this.size != other.size) return false;
+
+        for (int boardCol = 0; boardCol < size; boardCol++) {
+            for (int boardRow = 0; boardRow < size; boardRow++) {
+                if (this.gameState[boardCol][boardRow] != other.gameState[boardCol][boardRow]) return false;
+            }
+        }
+        return true;
     }
+
+    @Override
+    public int hashCode() {
+        return Arrays.deepHashCode(gameState);
+    }
+
 }
