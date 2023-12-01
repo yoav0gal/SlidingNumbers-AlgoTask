@@ -1,18 +1,11 @@
 
 import java.util.*;
 
-public class SlideNumbersGameAsGraph {
-    private Map<Board, List<Board>> gameGraph;
-
-    public Map<Board, List<Board>> getGraph() {
-        return gameGraph;
-    }
-    public SlideNumbersGameAsGraph(Board initialBoard) {
-        this.gameGraph = new HashMap<>();
+public class BFSSolver {
+    public BFSSolver() {
 
     }
-
-    public List<Board> BFSToSolved(Board startBoard) {
+    public List<Board> solve(Board startBoard) {
         if (startBoard.isSolved()) {
             return Collections.singletonList(startBoard);
         }

@@ -143,4 +143,13 @@ public class Board {
         return Arrays.deepHashCode(gameState);
     }
 
+
+    public int getSize() {
+        return size;
+    }
+
+    public int[][] getGameState() {
+        return gameState;
+    }
+
 }

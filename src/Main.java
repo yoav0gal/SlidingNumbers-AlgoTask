@@ -9,11 +9,14 @@ public class Main {
         // Display the initial board
 
 
-        SlideNumbersGameAsGraph graph = new SlideNumbersGameAsGraph(board);
-        List<Board> bfsPath = graph.BFSToSolved(board);
+        BFSSolver graph = new BFSSolver();
+        List<Board> bfsPath = graph.solve(board);
+
+        AStarSolver astarGraph = new AStarSolver();
+        List<Board> astarPath = astarGraph.solve(board, "manhattan");
 
         System.out.println("Initial Board:");
-        bfsPath.forEach(board1 -> {
+        astarPath.forEach(board1 -> {
             board1.displayBoard();
             System.out.printf("\n---------------------------------\n");
         });
