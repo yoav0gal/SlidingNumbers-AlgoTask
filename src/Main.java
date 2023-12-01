@@ -13,19 +13,35 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // Create a 4x4 board and shuffle it with 10 random moves
-        Board board = new Board(5, 20);
 
-        // Display the initial board
+//
+//        TestCases.BasicTest(4,10);
+//        TestCases.BasicTest(4,10);
+//        TestCases.BasicTest(4,10);
+//        TestCases.BasicTest(4,10);
+//        TestCases.BasicTest(4,10);
+
+//        TestCases.BasicTest(5,10);
+//        TestCases.BasicTest(5,10);
+//        TestCases.BasicTest(5,10);
+//        TestCases.BasicTest(5,10);
+//        TestCases.BasicTest(5,10);
 
 
-        BFSSolver graph = new BFSSolver();
-        List<Board> bfsPath = graph.solve(board);
-        printPath(bfsPath);
 
-        AStarSolver astarGraph = new AStarSolver();
-        List<Board> astarPath = astarGraph.solve(board, "manhattan");
-        printPath(astarPath);
+
+//        TestCases.AverageTest(4,10,50);
+//        TestCases.AverageTest(5,10,50);
+
+
+//        Board board = new Board(4,10);
+//        SolveResultObject BFSResult = BFSSolver.solve(board);
+//        BFSResult.printResult();
+//        BFSResult.printPath();
+//
+//        SolveResultObject aStarRes = AStarSolver.solve(board, "manhattan");
+//        aStarRes.printResult();
+//        aStarRes.printPath();
 
 
     }

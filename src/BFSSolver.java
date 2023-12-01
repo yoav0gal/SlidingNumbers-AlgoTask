@@ -2,12 +2,13 @@
 import java.util.*;
 
 public class BFSSolver {
-    public BFSSolver() {
+    public static SolveResultObject solve(Board startBoard) {
+        SolveResultObject result = new SolveResultObject();
+        int checkedNodesCount = 0;
 
-    }
-    public List<Board> solve(Board startBoard) {
         if (startBoard.isSolved()) {
-            return Collections.singletonList(startBoard);
+            result.finalizeResult(Collections.singletonList(startBoard),checkedNodesCount);
+            return result;
         }
 
         Queue<Board> queue = new LinkedList<>();
@@ -17,9 +18,11 @@ public class BFSSolver {
 
         while (!queue.isEmpty()) {
             Board current = queue.poll();
+            checkedNodesCount++;
 
             if (current.isSolved()) {
-                return buildPath(predecessors, current);
+                result.finalizeResult(buildPath(predecessors, current),checkedNodesCount);
+                return result;
             }
 
             for (Board neighbor : current.generateNeighbors()) {
@@ -30,10 +33,11 @@ public class BFSSolver {
             }
         }
 
-        return new ArrayList<>(); // No solution found
+        result.finalizeResult(new ArrayList<>(),checkedNodesCount);
+        return result;
     }
 
-    private List<Board> buildPath(Map<Board, Board> predecessors, Board end) {
+    public static List<Board> buildPath(Map<Board, Board> predecessors, Board end) {
         LinkedList<Board> path = new LinkedList<>();
         for (Board at = end; at != null; at = predecessors.get(at)) {
             path.addFirst(at);

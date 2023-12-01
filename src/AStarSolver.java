@@ -2,8 +2,6 @@ import java.util.*;
 
 public class AStarSolver {
 
-    public AStarSolver() {
-    }
 
     private static class Node implements Comparable<Node> {
         Board board;
@@ -24,7 +22,10 @@ public class AStarSolver {
         }
     }
 
-    public static List<Board> solve(Board initial, String heuristicType) {
+    public static SolveResultObject solve(Board initial, String heuristicType) {
+        SolveResultObject result = new SolveResultObject();
+        int checkedNodesCount = 0;
+
         PriorityQueue<Node> openSet = new PriorityQueue<>();
         Set<Board> closedSet = new HashSet<>();
         openSet.add(new Node(initial, heuristicType, 0, null));
@@ -33,18 +34,20 @@ public class AStarSolver {
             Node current = openSet.poll();
 
             if (current.board.isSolved()) {
-                return constructPath(current);
+                result.finalizeResult( constructPath(current),checkedNodesCount);
+                return result;
             }
 
             closedSet.add(current.board);
+            checkedNodesCount ++;
 
             for (Board neighbor : current.board.generateNeighbors()) {
                 if (closedSet.contains(neighbor)) continue;
                 openSet.add(new Node(neighbor, heuristicType,current.moves + 1, current));
             }
         }
-
-        return Collections.emptyList(); // Return an empty list if no solution is found
+        result.finalizeResult( Collections.emptyList(),checkedNodesCount);
+        return result; // Return an empty list if no solution is found
     }
 
     private static int heuristic(Board board, String type) {
@@ -77,7 +80,7 @@ public class AStarSolver {
     private static int incompatibleHeuristic(Board board) {
         // Generate an incompatible heuristic. For example, a random number.
         // Note: This is just a placeholder and should not be used in real scenarios.
-        return new Random().nextInt(100);
+        return manhattanDistance(board) + new Random().nextInt(5);
     }
 
     private static List<Board> constructPath(Node node) {
