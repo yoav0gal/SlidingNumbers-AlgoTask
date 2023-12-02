@@ -19,7 +19,6 @@ public class BFSSolver {
         while (!queue.isEmpty()) {
             Board current = queue.poll();
             checkedNodesCount++;
-
             if (current.isSolved()) {
                 result.finalizeResult(buildPath(predecessors, current),checkedNodesCount);
                 return result;

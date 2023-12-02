@@ -52,5 +52,12 @@ public class SolveResultObject {
             System.out.println("\n---------------------------------");
         });
     }
+    public void printEmptySlot(){
+        System.out.println("First empty index");
+        this.solution.forEach(board -> {
+            System.out.print(board.getEmptySlot());
+        });
+        System.out.print("*******************");
+    }
 
 }

@@ -152,4 +152,7 @@ public class Board {
         return gameState;
     }
 
+    public Point getEmptySlot() {
+        return emptySlot;
+    }
 }

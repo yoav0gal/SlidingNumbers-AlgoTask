@@ -7,7 +7,7 @@ public class AStarSolver {
         Board board;
         int moves;
         Node previous;
-        int priority; // This is 'f' in A*
+        int priority;
 
         public Node(Board board, String heuristicType , int moves, Node previous) {
             this.board = board;
@@ -41,13 +41,14 @@ public class AStarSolver {
             closedSet.add(current.board);
             checkedNodesCount ++;
 
+
             for (Board neighbor : current.board.generateNeighbors()) {
                 if (closedSet.contains(neighbor)) continue;
                 openSet.add(new Node(neighbor, heuristicType,current.moves + 1, current));
             }
         }
         result.finalizeResult( Collections.emptyList(),checkedNodesCount);
-        return result; // Return an empty list if no solution is found
+        return result;
     }
 
     private static int heuristic(Board board, String type) {
@@ -78,8 +79,6 @@ public class AStarSolver {
     }
 
     private static int incompatibleHeuristic(Board board) {
-        // Generate an incompatible heuristic. For example, a random number.
-        // Note: This is just a placeholder and should not be used in real scenarios.
         return manhattanDistance(board) + new Random().nextInt(5);
     }
 
