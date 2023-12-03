@@ -20,17 +20,17 @@ public class Main {
 
 
 
-//        TestCases.AverageTest(4,10,50);
-        TestCases.AverageTest(4,20,5);
+       TestCases.AverageTest(4,10,50 );
+        TestCases.AverageTest(5,10,50);
 
-
-//        Board board = new Board(4,10);
+//
+//        Board board = new Board(4,5);
 //        SolveResultObject BFSResult = BFSSolver.solve(board);
 //        BFSResult.printResult();
-
-
-//        System.out.println("++++++++++++++++++++++++++++");
 //        BFSResult.printPath();
+//
+//        System.out.println("++++++++++++++++++++++++++++");
+
 //
 //        SolveResultObject aStarRes = AStarSolver.solve(board, "incompatible")
 //        SolveResultObject aStarRes = AStarSolver.solve(board, "manhattan")

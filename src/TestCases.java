@@ -45,17 +45,28 @@ public class TestCases {
             totalIncompatibleHeuristicRes.add(currIncompatibleHeuristicRes);
         }
 
+        System.out.println("TOTAL:");
+        System.out.print("BFS:");
         totalBFSRes.printResult();
+        System.out.print("dijkstra:");
         totalDijkstraRes.printResult();
+        System.out.print("manhattan:");
         totalManhattanRes.printResult();
+        System.out.print("incompatible:");
         totalIncompatibleHeuristicRes.printResult();
 
         System.out.println("*******************");
 
+        System.out.println("AVG:");
+        System.out.print("BFS:");
         totalBFSRes.printAVGResult(testCount);
+        System.out.print("dijkstra:");
         totalDijkstraRes.printAVGResult(testCount);
+        System.out.print("manhattan:");
         totalManhattanRes.printAVGResult(testCount);
+        System.out.print("incompatible:");
         totalIncompatibleHeuristicRes.printAVGResult(testCount);
 
+        System.out.println("*******************");
     }
 }
