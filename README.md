@@ -1,13 +1,13 @@
 # SlidingNumbers-AlgoTask
-My solution to the Sliding Numbers task given in Algo course 
 
+My solution to the Sliding Numbers task given in Algo course
+
+[view in git hub](https://github.com/yoav0gal/SlidingNumbers-AlgoTask)
 
 <h2 dir="rtl"> טבלאות זמני ריצה</h2>
 <p dir="rtl">
 פאזל 15 - 10 מהלכי ערבוב: 
 </p>
-
-
 
 <table dir="rtl">
   <tr>
@@ -89,8 +89,6 @@ My solution to the Sliding Numbers task given in Algo course
    </td>
   </tr>
 </table>
-
-
 
 <table dir="rtl">
   <tr>
@@ -173,8 +171,6 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
-
 <table dir="rtl">
   <tr>
    <td>
@@ -255,8 +251,6 @@ My solution to the Sliding Numbers task given in Algo course
    </td>
   </tr>
 </table>
-
-
 
 <table dir="rtl">
   <tr>
@@ -339,8 +333,6 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
-
 <table dir="rtl">
   <tr>
    <td>
@@ -422,15 +414,11 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
 <p dir="rtl">
 </p>
 
-
 <p dir="rtl">
 פאזל 24 - 10 מהלכי ערבוב:</p>
-
-
 
 <table dir="rtl">
   <tr>
@@ -513,8 +501,6 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
-
 <table dir="rtl">
   <tr>
    <td>
@@ -595,8 +581,6 @@ My solution to the Sliding Numbers task given in Algo course
    </td>
   </tr>
 </table>
-
-
 
 <table dir="rtl">
   <tr>
@@ -679,11 +663,8 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
 <p dir="rtl">
 </p>
-
-
 
 <table dir="rtl">
   <tr>
@@ -766,8 +747,6 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
-
 <table dir="rtl">
   <tr>
    <td>
@@ -849,12 +828,8 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
-
 <p dir="rtl">
 פאזל 15 ערבוב 10 - ממוצע 50 הרצות:</p>
-
-
 
 <table dir="rtl">
   <tr>
@@ -937,12 +912,9 @@ My solution to the Sliding Numbers task given in Algo course
   </tr>
 </table>
 
-
 <p dir="rtl">
 פאזל 24 ערבוב 10 ממוצע 50 הרצות: 
 </p>
-
-
 
 <table dir="rtl">
   <tr>
@@ -1029,8 +1001,6 @@ My solution to the Sliding Numbers task given in Algo course
 
 <h2 dir="rtl">
 מסקנות:</h2>
-
-
 
 <table dir="rtl">
   <tr>
@@ -1148,4 +1118,3 @@ incompatible heuristic
    </td>
   </tr>
 </table>
-
